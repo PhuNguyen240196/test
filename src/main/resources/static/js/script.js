@@ -26,7 +26,7 @@ function connect(event) {
 function connectionSuccess() {
 	stompClient.subscribe('/topic/javainuse', onMessageReceived);
 
-	stompClient.send("103.81.84.160:8080/app/job-applications/434ba15f-13e2-49de-820c-40282335083e/conversation-all", {}, JSON.stringify({
+	stompClient.send("/app/chat.newUser", {}, JSON.stringify({
 		sender : name,
 		type : 'newUser'
 	}))
